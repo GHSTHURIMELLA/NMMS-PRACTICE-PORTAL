@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Class 8 NMMS Practice Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+        <div class="badge">ఆంధ్రప్రదేశ్ ప్రభుత్వం :: పాఠశాల విద్య, మార్కాపురం జిల్లా</div>
+    <h1>Class 8 NMMS Practice Portal</h1>
+    <p>ప్రభుత్వ ఉన్నత పాఠశాల,తురిమెళ్ళ :: NMMS Preparation</p>
+  </header>
+
+  <main class="wrap">
+    <section id="setupCard" class="card">
+      <h2>Start a Test / పరీక్ష ప్రారంభించండి</h2>
+      <p class="muted">Choose your class, identify yourself using your admission number, and select a subject.</p>
+      <div class="grid">
+        <label>Class / తరగతి
+          <select id="classSelect">
+            <option value="8">Class 8 — NMMS</option>
+            <option value="10">Class 10 — AP SSC</option>
+          </select>
+        </label>
+        <!--<label>Admission Number / ప్రవేశ సంఖ్య
+          <input id="admission" inputmode="numeric" autocomplete="off" placeholder="Enter admission number">
+        </label>-->
+        <label>Student Name / విద్యార్థి పేరు
+          <select id="studentName" disabled>
+	   <option value="">Select your name / మీ పేరు ఎంచుకోండి</option>
+	   </select>
+		 <p id="lookupMessage" class="message" aria-live="polite"></p>
+        </label>
+        <label>Subject / సబ్జెక్టు
+          <select id="subjectSelect"></select>
+        </label>
+      </div>
+     
+      <button id="startBtn" class="primary" disabled>Start Test / పరీక్ష ప్రారంభించు</button>
+      <p class="small">If your name does not appear, contact your teacher. / పేరు కనిపించకపోతే ఉపాధ్యాయుడిని సంప్రదించండి.</p>
+    </section>
+
+    <section id="quizCard" class="card hidden">
+      <div class="quizTop">
+        <div><span id="testLabel" class="pill"></span><h2 id="questionCounter">Question 1</h2></div>
+        <div id="progressText" class="muted"></div>
+      </div>
+      <div class="progress"><div id="progressBar"></div></div>
+      <div id="questionText" class="question"></div>
+      <div id="options" class="options"></div>
+      <div class="navRow">
+        <button id="prevBtn" class="secondary">Previous / వెనుకకు</button>
+        <button id="nextBtn" class="primary">Next / తరువాత</button>
+        <button id="submitBtn" class="primary hidden">Submit Test / పరీక్ష సమర్పించు</button>
+      </div>
+      <p class="small">You can review your answers before submitting. Results and explanations appear only after submission.</p>
+    </section>
+
+    <section id="resultCard" class="card hidden">
+      <div class="resultHead"><div class="successMark">✓</div><div><h2>Test submitted / పరీక్ష పూర్తయింది</h2><p id="saveStatus" class="muted"></p></div></div>
+      <div class="scoreBox"><span>Your Score / మీ మార్కులు</span><strong id="score"></strong></div>
+      <div id="reviewList"></div>
+      <button id="newTestBtn" class="primary">Take Another Test / మరో పరీక్ష రాయండి</button>
+    </section>
+
+    <footer>For classroom practice only. Do not enter phone numbers or other unnecessary personal information.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
